@@ -1,0 +1,66 @@
+{% extends 'default.html' %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+
+<audio controls loop>
+    <source src="/static/icecold.wav" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'élément audio.
+  </audio>
+
+<style>
+    #usernameHelp {
+        color: #000000; /* Noir */
+    }
+    .container {
+    max-width: 600px; /* Taille ajustée pour le container */
+    padding: 20px;
+    margin: auto;
+    margin-top: 50px; /* Espace supplémentaire en haut */
+    background-color: rgba(255, 255, 255, 0.4); /* Arrière-plan blanc avec opacité réduite */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.9);
+}
+
+    h1 {
+        margin-bottom: 20px; /* Espace après le titre */
+    }
+    .form-label {
+        margin-bottom: 0.5rem; /* Espace en dessous de chaque label */
+    }
+    .form-text {
+        margin-bottom: 10px; /* Espace en dessous du texte descriptif */
+    }
+    .mb-3 {
+        margin-bottom: 20px; /* Espace en dessous de chaque groupe de formulaire */
+    }
+    .alert {
+        margin-bottom: 20px; /* Espace en dessous des alertes */
+    }
+</style>
+<h1>Connexion</h1>
+<div class="container">
+  {% if message == 'Erreur' %}
+    <p class="alert alert-danger">Veuillez remplir tous les champs</p>
+  {% elif utilisateur == None and message == 'Succès' %}
+    <p class="alert alert-warning">Nom d'utilisateur ou mot de passe incorrect.</p>
+  {% elif message == 'Erreur' %}
+    <p class="alert alert-danger">Impossible de joindre le serveur, contactez le WebAdmin</p>
+  {% endif %}
+  <form action="{{url_for('login')}}" method="POST">
+      <div class="mb-3">
+        <label for="username" class="form-label">Nom d'utilisateur</label>
+        <input name="username" type="text" class="form-control" id="username" aria-describedby="usernameHelp">
+        <div id="usernameHelp" class="form-text">Vos données sont en sécurité avec nous.</div>
+      </div>
+      <div class="mb-3">
+        <label for="mdp" class="form-label">Mot de passe</label>
+        <input name="mdp" type="password" class="form-control" id="mdp">
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Connexion</button>
+    </form>
+</div>
+{% endblock %}
+

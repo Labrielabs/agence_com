@@ -1,0 +1,43 @@
+{% extends 'default.html' %}
+{% block title %} Ajout d'un utilisateur {% endblock %}
+
+{% block content %}
+<style>
+    #welcomeImage {
+        width: 400px; /* Définir la largeur à 400px */
+        height: auto; /* Maintenir le ratio hauteur/largeur */
+        display: block; /* Assure que l'image est bien alignée */
+        margin: 20px auto; /* Centrer l'image horizontalement et ajouter de l'espace autour */
+    }
+</style>
+
+<h1>Veuillez remplir le formulaire pour vous inscrire</h1>
+<div>
+    {% if message == 'error' %}
+    <p class="alert alert-danger" role="alert">Vous devez remplir tous les champs</p>
+    {% elif message == 'Error' %}
+    <p class="alert alert-warning" role="alert">Erreur pendant l'ajout, contactez le WebAdmin.</p>
+    {% elif message == 'Success' %}
+    <p class="alert alert-success" role="alert">{{ utilisateur.nom }} ajouté avec succès</p>
+    {% endif %}
+</div>
+<form action="{{ url_for('register') }}" method="POST">
+    <div class="form-floating mb-3">
+        <input name="nom" type="text" class="form-control" id="nom">
+        <label for="nom">Nom</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="username" type="text" class="form-control" id="username">
+        <label for="username">Username</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="mdp" type="text" class="form-control" id="mdp">
+        <label for="mdp">Password</label>
+    </div>
+    <div class="form-floating mb-3">
+        <button type="submit" class="btn btn-primary">Finaliser l'inscription</button>
+    </div>
+    
+    <img src="/static/welcome.webp" alt="welcome" id="welcomeImage">
+</form>
+{% endblock %}

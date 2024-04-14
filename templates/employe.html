@@ -1,0 +1,41 @@
+{% extends 'default.html' %}
+{% block title %} Employés {% endblock %}
+   
+
+     
+{% block content %}
+<h1>Liste des employés</h1>
+
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+
+        
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Matricule</th>
+        <th scope="col">Fonction</th>
+        <th scope="col">Département</th>
+        <th scope="col">Id</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        {%for employe in employes%}
+        <tr>
+            
+            <td>{{employe[0]}}</td>
+            <td>{{employe[1]}}</td>
+            <td>{{employe[2]}}</td>
+            <td>{{employe[3]}}</td>
+            <td>{{employe[4]}}</td>
+            <td>{{employe[5]}}</td>
+            
+        </tr>
+        {%endfor%}
+        
+        </tr>
+    </tbody>
+  </table>
+  
+{% endblock %}

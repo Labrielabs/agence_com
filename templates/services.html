@@ -1,0 +1,63 @@
+{% extends 'default.html' %}
+{% block title %} Services {% endblock %}
+
+{% block content %}
+
+
+<audio controls loop>
+    <source src="/static/icecold.wav" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'élément audio.
+  </audio>
+  
+<style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+        color: #070606;
+        background-color: #ffffff;
+        background-image: url('/static/Services.webp'); 
+        background-size: cover;
+        background-position: center;
+    }
+    h1, h2 {
+        color: #0056b3;
+        font-weight: 600;
+    }
+    p {
+        font-size: 16px;
+        color: #0a0a0a;
+        line-height: 1.6;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.5); /* Ajoute un fond blanc légèrement transparent pour une meilleure lisibilité */
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .service {
+        margin-bottom: 20px;
+    }
+</style>
+
+<h1>Services</h1>
+<body>
+    <div class="container">
+        <div class="service">
+            <h2>Gestion des Employés</h2>
+            <p>Explorez notre plateforme intégrée pour une gestion optimale des données des employés. Ajoutez, modifiez ou supprimez des profils et accédez à des informations approfondies sur chaque membre de votre équipe, le tout en quelques clics.</p>
+        </div>
+        <div class="service">
+            <h2>Gestion des Départements</h2>
+            <p>Bénéficiez de notre solution pour structurer vos équipes en créant et en gérant des départements. Assignez les employés aux unités adéquates en fonction de leurs compétences et responsabilités pour une efficacité accrue.</p>
+        </div>
+        <div class="service">
+            <h2>Connexion Sécurisée</h2>
+            <p>La sécurité de vos données est notre engagement. Profitez de protocoles de connexion sécurisés qui préservent la confidentialité et l'intégrité de vos informations personnelles et professionnelles.</p>
+        </div>
+        <div class="service">
+            <h2>Support Client</h2>
+            <p>Faites confiance à notre support client, toujours disponible pour vous assister. Nous sommes dédiés à optimiser votre expérience et à résoudre rapidement toute interrogation ou difficulté rencontrée.</p>
+        </div>
+    </div>
+</body>
+{% endblock %}

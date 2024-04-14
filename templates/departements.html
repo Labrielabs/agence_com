@@ -1,0 +1,38 @@
+{% extends 'default.html' %}
+{% block title %} Départements {% endblock %}
+   
+
+     
+{% block content %}
+<h1>Liste des départements</h1>
+
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+
+        
+        <th scope="col">ID</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Emplacement</th>
+        <th scope="col">Direction</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        {%for departement in departements%}
+        <tr>
+            
+            <td>{{departement[0]}}</td>
+            <td>{{departement[1]}}</td>
+            <td>{{departement[2]}}</td>
+            <td>{{departement[3]}}</td>
+            
+            
+        </tr>
+        {%endfor%}
+        
+        </tr>
+    </tbody>
+  </table>
+  
+{% endblock %}

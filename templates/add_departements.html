@@ -1,0 +1,33 @@
+{% extends 'default.html' %}
+{% block title %} Ajout d'un département {% endblock %}
+
+
+
+{% block content %}
+<h1>Veuillez remplir ce champs pour ajouter un département</h1>
+<div class="container">
+    {% if message=='error'%}
+    <p class="alert alert-danger" role="alert">Tous les champs sont obligatoires !</p>
+    {% elif message == 'Error'%}
+    <p class="alert alert-warning" role="warning">Erreur lors de l'ajout.</p>
+    {% elif message=='Success'%}
+    <p class="alert alert-success" role="success">Ajout du départment {{departement.nom}} avec succès!</p>
+    {%endif%}
+</div>
+<form action="{{url_for('add_departements')}}" method="POST">
+    <div class="form-floating mb-3">
+        <input name="nom" type="text" class="form-control" id="nom">
+        <label for="nom">Nom</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="emplacement" type="text" class="form-control" id="emplacement">
+        <label for="emplacement">Emplacement</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="direction" type="text" class="form-control" id="direction">
+        <label for="direction">Direction</label>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Ajouter le département</button>
+</form>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'default.html' %}
+{% block title %} À propos {% endblock %}
+
+{% block content %}
+
+<!-- Emplacement pour l'intégration de l'audio -->
+<audio controls loop>
+    <source src="/static/icecold.wav" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'élément audio.
+  </audio>
+
+  
+<style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+        color: #050505;
+        background-color: #f4f4f4;
+        background-image: url('/static/Services.webp');
+        background-size: cover;
+        background-position: center;
+    }
+    h1, h2 {
+        color: #0056b3;
+        font-weight: 600;
+    }
+    p, li {
+        font-size: 16px;
+        color: #030303;
+        line-height: 1.6;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.5); /* Transparence ajustée pour une meilleure visibilité de l'arrière-plan */
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    ul {
+        padding-left: 20px;
+    }
+</style>
+
+<h1>À propos</h1>
+<body>
+    <div class="container">
+        <p>Bienvenue sur notre plateforme, votre partenaire expert en gestion des ressources humaines. Notre mission est de simplifier et optimiser la gestion du personnel et des départements pour votre entreprise.</p>
+        <p>Accédez à une suite complète de fonctionnalités directement depuis votre espace sécurisé :</p>
+        <ul>
+            <li>Consultation complète des listes d'employés,</li>
+            <li>Accès aux détails approfondis de chaque employé,</li>
+            <li>Gestion efficace des départements et des équipes,</li>
+            <li>Capacité à mettre à jour les informations des employés en temps réel,</li>
+            <li>Et bien plus, pour une gestion facilitée au quotidien.</li>
+        </ul>
+        <p>Nous nous engageons à continuellement améliorer notre plateforme pour mieux répondre à vos exigences en gestion des ressources humaines. Pour toute suggestion ou commentaire, notre équipe reste à votre écoute.</p>
+        <p>Nous vous remercions pour votre confiance et vous souhaitons une excellente expérience sur notre site.</p>
+    </div>
+</body>
+{% endblock %}

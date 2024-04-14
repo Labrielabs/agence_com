@@ -1,0 +1,44 @@
+{% extends 'default.html' %}
+{% block title %} Ajout d'un employé {% endblock %}
+
+
+
+{% block content %}
+<h1>Veuillez remplir ce champ pour ajouter un employé</h1>
+<div class="container">
+    {% if message=='error'%}
+    <p class="alert alert-danger" role="alert">Tout les champs sont obligatoires !</p>
+    {% elif message == 'Error'%}
+    <p class="alert alert-warning" role="warning">Erreur lors de l'ajout, le matricule ne peut être un diplicata. Si l'erreur persiste, veuillez contacter Abdou.</p>
+    {% elif message=='Success'%}
+    <p class="alert alert-success" role="success">Ajout de l'employé {{employe.matricule}} avec succès!</p>
+    {%endif%}
+</div>
+<form action="{{url_for('add_employe')}}" method="POST">
+    <div class="form-floating mb-3">
+        <input  name="nom" type="text" class="form-control" id="nom" >
+        <label for="nom">Nom</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input  name="prenom" type="text" class="form-control" id="prenom" >
+        <label for="prenom">Prenom</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input  name="matricule" type="text" class="form-control" id="matricule" >
+        <label for="matricule">Matricule</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input  name="fonction" type="text" class="form-control" id="fonction" >
+        <label for="fonction">Fonction</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input  name="departement" type="text" class="form-control" id="departement" >
+        <label for="departement">Département</label>
+    </div>
+    <div class ="form-floating mb-3">
+        <button type="submit" class="btn btn-primary">Ajouter l'employé</button>
+    </div>
+    
+    
+</form>
+{% endblock %}
